@@ -1,8 +1,8 @@
 
-const Boton = () => {
+const Boton = ({texto}) => {
   return (
     <button>
-        Click
+        {texto}
     </button>
   )
 }
