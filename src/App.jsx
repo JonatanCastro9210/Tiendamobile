@@ -25,13 +25,13 @@ const App = () => {
   return (
     <>
 
-    {/* <h1 style={colorFondo}>Mobile Station</h1>
+     <h1 style={colorFondo}>Mobile Station</h1>
     <h2 style={{color:"darker red"}}>Ofertas Exclusivas</h2>
     <h3 className="colorFondoPrincipal">Modelos Disponibles</h3>
-    {/* <TituloPrincipal saludo="Bienvenidos a la tienda Mobile" producto={celular}/>
+    <TituloPrincipal saludo="Bienvenidos a la tienda Mobile" producto={celular}/>
     <Boton texto="Comprar"/>
     <Boton texto="Cancelar"/> 
-    <ItemCount/>*/}
+    <ItemCount/>
     <ItemListContainer producto={celular}/>
     <NavBar/>
     <ItemListContainer/>
