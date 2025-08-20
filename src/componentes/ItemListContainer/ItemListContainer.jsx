@@ -1,9 +1,20 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import {getProductos} from "../asyncmock";
+import ItemList from "./Itemlist";
 
-export const ItemListContainer = ({producto}) => {
+const ItemListContainer = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    getProductos().then((res) => setProductos(res));
+  }, []);
+
   return (
-    <div>{producto.marca}
-    <p>Precio: Us${producto.precio}</p>
+    <div>
+      <h2>Mis Productos</h2>
+      <Itemlist productos={productos} />
     </div>
   )
 }
+
+export default ItemListContainer
