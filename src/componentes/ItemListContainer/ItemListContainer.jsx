@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
-import {getProductos} from "../asyncmock";
-import ItemList from "./Itemlist";
+import { useParams } from "react-router-dom";   
+import productos from "../data/productos";
+import ItemList from "../Itemlist/Itemlist";
 
-const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+function ItemListContainer({ greeting }) {
+  const [items, setItems] = useState ([]);
+  const { categoriaId } = useParams ();
 
   useEffect(() => {
-    getProductos().then((res) => setProductos(res));
-  }, []);
+    const getData = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(productos);
+      }, 500);
+    });
 
+    getData.then((res) => {
+      if (categoriaId) {
+        setItems(res.filter((prod) => prod.categoria === categoriaId));
+      } else {
+        setItems(res);
+      }
+    });
+  }, [categoriaId]);
   return (
     <div>
-      <h2>Mis Productos</h2>
-      <Itemlist productos={productos} />
+      <h1>{greeting}</h1>
+      <ItemList items={items} />
     </div>
-  )
+  );
 }
-
-export default ItemListContainer
+export default ItemListContainer;

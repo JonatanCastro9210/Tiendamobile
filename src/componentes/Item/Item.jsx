@@ -1,15 +1,12 @@
-import React from 'react'
-<img src={producto.img} alt={producto.nombre} className="producto-img" />
+import { Link } from "react-router-dom";
 
-const Item = ({ producto }) => {
+const iTem = ({producto}) => {
   return (
-    <div>
-      <img src={producto.img} alt={producto.nombre} className="producto-img" />
+    <div style={{border: "1px solid gray", padding: "10px", borderRadius: "8px" }}>
       <h3>{producto.nombre}</h3>
       <p>Precio: {producto.precio}</p>
-      <p>ID: {producto.id}</p>
-    </div>
-  )
-}
 
-export default Item
+    </div>
+  );
+}
+export default iTem;

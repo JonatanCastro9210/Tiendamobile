@@ -1,23 +1,14 @@
-import "./NavBar.css"
-import CartWidget from '../CartWidget/CartWidget'
+import { Link } from "react-router-dom";
 
-export const NavBar = () => {
+function NavBar() {
   return (
-    <header>
-        <h1>Mobile Station</h1>
+    <nav className="navbar">
+    <Link to="/">Inicio</Link>
+    <Link to="/categoria/celulares">Celulares</Link>
+    <Link to="/categoria/accesorios">Accesorios</Link>
+    <Link to="/categoria/tablets">Tablets</Link>
+    </nav>
 
-        <nav>
-            <ul>
-                <li>iPhone</li>
-                <li>Samsungs</li>
-                <li>Motorola</li>
-            </ul>
-        </nav>
-
-
-        <CartWidget/>
-    </header>
-    
-  )
+  );
 }
-export default NavBar
+export default NavBar;
